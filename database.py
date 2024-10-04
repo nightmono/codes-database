@@ -102,7 +102,7 @@ def set_code(cur: sqlite3.Cursor, code: str, new_value: int) -> tuple:
 def format_code(code: tuple) -> str:
     """Returns a formmated, human-friendly code tuple"""
 
-    return f"{code[0]}, ({code[1]}/{code[2]} uses left)"
+    return f"{code[0]} ({code[1]}/{code[2]} uses left)"
 
 def formatted_get_codes(cur: sqlite3.Cursor) -> str:
     """Returns a formmated string list of all codes"""
