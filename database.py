@@ -25,7 +25,7 @@ def connect_to_database(file: str) -> sqlite3.Connection:
 
 def add_code(cur: sqlite3.Cursor, code: str, total_uses: int, remaining_uses: int = -1) -> None:
     """
-    Adds a code to the database, reminaing_uses is set to total uses if
+    Adds a code to the database, reminaing uses is set to total uses if
     left as -1
     """
 
@@ -39,7 +39,7 @@ def add_code(cur: sqlite3.Cursor, code: str, total_uses: int, remaining_uses: in
 
     cur.connection.commit()
 
-def get_codes(cur: sqlite3.Cursor) -> list[str]:
+def get_codes(cur: sqlite3.Cursor) -> list[tuple]:
     """Returns a list of every code with their remaining and total uses"""
 
     cur.execute("SELECT code, remaining_uses, total_uses FROM codes")
